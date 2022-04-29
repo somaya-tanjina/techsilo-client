@@ -1,74 +1,83 @@
 [
     {
         "_id": 1,
-        "price": "626b939cb4267049a349a4a8",
-        "picture": "https://i.ibb.co/X3TM9xz/1.jpg",
+        "price": 85000,
+        "img": "https://i.ibb.co/X3TM9xz/1.jpg",
         "quantity": 29,
-        "name": "Shelley Cline",
-        "description": "Et culpa laborum aliquip in eu et nostrud magna ut ea nisi anim. Cupidatat laboris aliquip dolor nisi esse. Pariatur consequat est excepteur eiusmod anim Lorem. Velit commodo consectetur dolore aliquip amet velit irure magna dolor esse proident tempor nisi.\r\n",
+        "name": "Dell Latitude 14 3420 Core i5 11th Gen 14 HD Laptop",
+        "description": " Intel Core i5-1145G7 (8MB Cache, 2.60 GHz up to 4.40 GHz), 8 GB 3200MHz DDR4 RAM",
         "supplierName": "Hodges Ferrell"
     },
     {
         "_id": 2,
-        "price": "626b939c0e714047238de9df",
-        "picture": "https://i.ibb.co/VHJ6Zd6/2.jpg",
+        "price": 99000,
+        "img": "https://i.ibb.co/VHJ6Zd6/2.jpg",
         "quantity": 30,
-        "name": "Greta Bullock",
-        "description": "Lorem officia exercitation amet do cillum. Deserunt ea amet ut irure. Consectetur ad esse deserunt in quis fugiat reprehenderit dolore fugiat.\r\n",
+        "name": "Asus VivoBook 15 K513EQ Core i7 11th Gen 15.6 FHD Laptop",
+        "description": "AMD Ryzen 7 5800H Processor (3.2GHz Up to 4.4GHz, 8 Cores, 16 Threads), 512GB M.2 NVMe PCIe 3.0 SSD",
         "supplierName": "Hampton Pace"
     },
     {
         "_id": 3,
-        "price": "626b939cbb0fdd3870a7c21d",
-        "picture": "https://i.ibb.co/ZKd3bwg/3.jpg",
+        "price": 96000,
+        "img": "https://i.ibb.co/ZKd3bwg/3.jpg",
         "quantity": 35,
-        "name": "Caitlin Kirkland",
-        "description": "Sint ad laborum non ea ex ut minim id labore sit veniam. Proident ullamco Lorem et consectetur eu qui et ipsum do ullamco laboris laboris cupidatat occaecat. Cupidatat aliqua dolore nostrud quis eu incididunt sint amet. Id commodo velit velit pariatur in.\r\n",
+        "name": "Lenovo ThinkPad E14 Core i7 11th Gen 14 FHD Laptop",
+        "description": "Processor: Intel Core i7-1165G7 (12M Cache, 2.80 GHz up to 4.70 GHz, with IPU),8GB DDR4L 3200MHz RAM",
         "supplierName": "Snyder Ryan"
     },
     {
         "_id": 4,
-        "price": "626b939cae629a6d0a370ef9",
-        "picture": "https://i.ibb.co/DQ4fPDp/4.jpg",
+        "price": 150000,
+        "img": "https://i.ibb.co/DQ4fPDp/4.jpg",
         "quantity": 23,
-        "name": "Daugherty Cummings",
-        "description": "Amet nulla quis et aute aliquip. Adipisicing sit elit aliqua tempor enim sint dolor tempor mollit ipsum qui. Eiusmod veniam nostrud dolor officia.\r\n",
-        "supplierName": "Brooks Michael"
+        "name": "Apple MacBook Pro 14-Inch M1 Pro Chip, 16GB RAM, 512GB SSD (MKGR3LL/A) Silver",
+        "description": " (3024 x 1964) Liquid Retina XDR display, 6GB RAM, 512GB SSD",
+        "supplierName": "Abraham Michael"
     },
     {
-        "_id": 4,
-        "price": "626b939cae629a6d0a370ef9",
-        "picture": "https://i.ibb.co/sb8gQ01/5.jpg",
+        "_id": 5,
+        "price": 160000,
+        "img": "https://i.ibb.co/sb8gQ01/5.jpg",
         "quantity": 23,
-        "name": "Daugherty Cummings",
-        "description": "Amet nulla quis et aute aliquip. Adipisicing sit elit aliqua tempor enim sint dolor tempor mollit ipsum qui. Eiusmod veniam nostrud dolor officia.\r\n",
+        "name": "NEXSTGO NX101 Primus Core i5 8th Gen 14",
+        "description": "Intel Core i7-1165G7 Processor (12M Cache, 2.80 GHz up to 4.70 GHz),8GB DDR4 RAM + 512GB M.2 SSD",
         "supplierName": "Brooks Michael"
     },
     {
         "_id": 6,
-        "price": "626b939c21e892b0806c2e73",
-        "picture": "https://i.ibb.co/svR8JHj/6.jpg",
+        "price": 100000,
+        "img": "https://i.ibb.co/svR8JHj/6.jpg",
         "quantity": 33,
-        "name": "Tonya Hardy",
-        "description": "Officia fugiat proident ut nisi culpa aliquip. Nisi nostrud eu ut nulla voluptate occaecat voluptate non irure quis sit deserunt esse Lorem. Officia dolore irure consectetur laborum voluptate labore mollit adipisicing nostrud est Lorem nulla. Lorem consectetur aliquip enim velit et eiusmod.\r\n",
+        "name": "Acer Nitro 5 AN515-55 Core i5 10th Gen RTX 2060 6GB Graphics 15.6",
+        "description": "Intel Core i5-10300H Processor (8M Cache, 2.50 GHz up to 4.50 GHz), 8GB DDR4 RAM",
         "supplierName": "Morin Lynn"
     },
     {
         "_id": 7,
-        "price": "626b939c21e892b0806c2e73",
-        "picture": "https://i.ibb.co/svR8JHj/6.jpg",
+        "price": 99000,
+        "img": "https://i.ibb.co/8dGd2qN/hp.jpg",
         "quantity": 33,
-        "name": "Tonya Hardy",
-        "description": "Officia fugiat proident ut nisi culpa aliquip. Nisi nostrud eu ut nulla voluptate occaecat voluptate non irure quis sit deserunt esse Lorem. Officia dolore irure consectetur laborum voluptate labore mollit adipisicing nostrud est Lorem nulla. Lorem consectetur aliquip enim velit et eiusmod.\r\n",
-        "supplierName": "Morin Lynn"
+        "name": "HP Envy X360 Convertible 13-ay0136AU AMD Ryzen 5 4500U 13.3 inch Touch Laptop with Win 10",
+        "description": "Intel Core i7-1165G7 Processor (12M Cache, 2.80 GHz up to 4.70 GHz) 8GB DDR4 RAM + 512GB M.2 SSD",
+        "supplierName": "Jack Lynn"
     },
     {
         "_id": 8,
-        "price": "626b939c21e892b0806c2e73",
-        "picture": "https://i.ibb.co/svR8JHj/6.jpg",
+        "price": 130000,
+        "img": "https://i.ibb.co/f2nGxsg/microsoft.jpg",
         "quantity": 33,
-        "name": "Tonya Hardy",
-        "description": "Officia fugiat proident ut nisi culpa aliquip. Nisi nostrud eu ut nulla voluptate occaecat voluptate non irure quis sit deserunt esse Lorem. Officia dolore irure consectetur laborum voluptate labore mollit adipisicing nostrud est Lorem nulla. Lorem consectetur aliquip enim velit et eiusmod.\r\n",
+        "name": "Microsoft Surface Laptop 4 Ryzen 5 4680U 8GB RAM 128GB SSD 13.5",
+        "description": " AMD Ryzen 5 4680U (8MB L3 Cache, 2.2GHz Up to 4.0GHz), 8MB LPDDR4x RAM",
+        "supplierName": "Martin Lynn"
+    },
+    {
+        "_id": 9,
+        "price": 150000,
+        "img": "https://i.ibb.co/7zfwRkW/g5-md-01-228x228.jpg",
+        "quantity": 33,
+        "name": "Gigabyte G5 GD Core i5 11th Gen RTX 3050 4GB Graphics 15.6",
+        "description": "16GB DDR4 Ram +512GB SSD, NVIDIA RTX 3070 8GB Graphics Card",
         "supplierName": "Morin Lynn"
     }
 ]
