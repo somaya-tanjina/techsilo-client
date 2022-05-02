@@ -1,0 +1,15 @@
+.border{
+  height: 1px solid black;
+
+}
+.btn-facebook{
+
+  color: #fff;
+  padding: 7px;
+  border-radius: 5px;
+}
+.btn-facebook:hover{
+background-color: #0C2E8A;
+}
+
+
