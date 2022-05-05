@@ -1,13 +1,28 @@
 import React from "react";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 import img from "../../images/login.png";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Login.css";
 
 const Login = () => {
+    const [signInWithEmailAndPassword, user, loading, error] =
+        useSignInWithEmailAndPassword(auth);
+
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+
+        const email = event.target.email.value;
+        const password = event.target.pass.value;
+
+         signInWithEmailAndPassword(email, password);
+
+    };
+    console.log(user);
     return (
         <div className="container">
             <div className="form">
-                <form>
+                <form onSubmit={handleFormSubmit}>
                     <div className="input-container">
                         <label>Username </label>
                         <input type="text" name="email" required />

@@ -1,9 +1,14 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
+import AddItem from "./components/AddItem/AddItem";
+import Blogs from "./components/Blogs/Blogs";
 import Header from "./components/HomePage/Header/Header";
 import Home from "./components/HomePage/Home";
 import InventoryDetails from "./components/InventoryDetails/InventoryDetails";
 import Login from "./components/Login/Login";
+import ManageItems from "./components/ManageItems/ManageItems";
+import MyItems from "./components/MyItems/MyItems";
+import RequiredAth from "./components/RequiredAuth/RequiredAuth";
 import Signup from "./components/Signup/Signup";
 
 function App() {
@@ -12,9 +17,24 @@ function App() {
             <Header></Header>
             <Routes>
                 <Route path="/" element={<Home></Home>}></Route>
-                <Route path="/inventory/:id" element={<InventoryDetails></InventoryDetails>}></Route>
-                <Route path="/login" element={<Login></Login>}></Route>
+                <Route
+                    path="/inventory/:id"
+                    element={
+                        <RequiredAth>
+                            <InventoryDetails></InventoryDetails>
+                        </RequiredAth>
+                    }
+                ></Route>
+
+                <Route
+                    path="/manageitems"
+                    element={<ManageItems></ManageItems>}
+                ></Route>
+                <Route path="/additem" element={<AddItem></AddItem>}></Route>
+                <Route path="/myitems" element={<MyItems></MyItems>}></Route>
+                <Route path="/blogs" element={<Blogs></Blogs>}></Route>
                 <Route path="/signup" element={<Signup></Signup>}></Route>
+                <Route path="/login" element={<Login></Login>}></Route>
             </Routes>
         </div>
     );
