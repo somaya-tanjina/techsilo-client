@@ -3,7 +3,8 @@ import "./SocialLogin.css";
 import google from "../../images/socila-icon/google.png";
 import facebook from "../../images/socila-icon/facebook.png";
 import github from "../../images/socila-icon/github.png";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF, faGoogle, faGithub } from "@fortawesome/free-brands-svg-icons";
 const SocialLogin = () => {
     return (
         <div>
@@ -13,22 +14,14 @@ const SocialLogin = () => {
                 <div className="border w-50"></div>
             </div>
             <div>
-                <button className="btn-google btn btn-outline-success border-0 w-100 mb-2">
-                    <img style={{ width: "30px" }} src={google} alt="" />
-                    Continue With Google
+                <button className="btn-google    btn btn-success  rounded-circle  mb-2">
+                    <FontAwesomeIcon icon={faGoogle} />
                 </button>
-                <button className=" btn btn-outline-primary border-0 w-100 mb-2">
-                    <img style={{ width: "30px" }} src={facebook} alt="" />
-                    Continue With Facebook
+                <button className=" btn btn-outline-primary rounded-circle   mb-2">
+                    <FontAwesomeIcon icon={faFacebookF} />
                 </button>
-                <button className="btn btn-outline-dark border-0 w-100">
-                    <img
-                        className="bg-light rounded"
-                        style={{ width: "30px" }}
-                        src={github}
-                        alt=""
-                    />
-                    Continue With Github
+                <button className="btn btn-outline-dark btn-floating rounded-circle ">
+                    <FontAwesomeIcon icon={faGithub} />
                 </button>
             </div>
         </div>

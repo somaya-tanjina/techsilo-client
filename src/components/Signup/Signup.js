@@ -1,6 +1,23 @@
-import React from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from '../../firebase.init';
 const Signup = () => {
+const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+
+    const handleFormSubmit = (event) => {
+        event.preventDefault()
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const password = event.target.pass.value;
+
+         createUserWithEmailAndPassword(email, password);
+
+    }
+console.log(user);
+
   return (
       <div className="container">
           <div className="d-md-flex  justify-content-md-center align-items-center h-100 border  ">
@@ -9,16 +26,24 @@ const Signup = () => {
               </div>
 
               <div className="form py-5  ">
-                  <form>
+                  <form onSubmit={handleFormSubmit}>
                       <h1 className="text-center mb-4 text-dark">
-                          Please Login
+                          Sign Up
                       </h1>
 
                       <input
+                          
                           className="w-100 mb-3"
                           type="text"
-                          name="uname"
-                          placeholder="Your name"
+                          name="name"
+                          placeholder="Name"
+                          required
+                      />
+                      <input
+                          className="w-100 mb-3"
+                          type="text"
+                          name="email"
+                          placeholder=" Email"
                           required
                       />
 
@@ -26,7 +51,7 @@ const Signup = () => {
                           className="w-100"
                           type="password"
                           name="pass"
-                          placeholder="password"
+                          placeholder="Password"
                           required
                       />
 

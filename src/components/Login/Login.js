@@ -6,51 +6,21 @@ import "./Login.css";
 const Login = () => {
     return (
         <div className="container">
-            <div className="d-md-flex  justify-content-md-center align-items-center h-100 border  ">
-                <div className="login-img">
-                    <img className="login-img" src={img} alt="" />
-                </div>
-
-                <div className="form py-5  ">
-                    <form>
-                        <h1 className="text-center mb-4 text-dark">
-                            Please Login
-                        </h1>
-
-                        <input
-                            className="w-100 mb-3"
-                            type="text"
-                            name="uname"
-                            placeholder="Your name"
-                            required
-                        />
-
-                        <input
-                            className="w-100"
-                            type="password"
-                            name="pass"
-                            placeholder="password"
-                            required
-                        />
-
-                        <div className="button-container">
-                            <input
-                                className="w-100"
-                                type="submit"
-                                value="Log In"
-                            />
-                        </div>
-                    </form>
-                    <div className=" mt-4">
-                        <p>
-                            <span>Forget Password?</span>
-                        </p>
-                        <p>
-                            Don't have an account? <span>Sign Up</span>
-                        </p>
+            <div className="form">
+                <form>
+                    <div className="input-container">
+                        <label>Username </label>
+                        <input type="text" name="email" required />
                     </div>
-                    <SocialLogin></SocialLogin>
-                </div>
+                    <div className="input-container">
+                        <label>Password </label>
+                        <input type="password" name="pass" required />
+                    </div>
+                    <div className="button-container">
+                        <input type="submit" />
+                    </div>
+                </form>
+                <SocialLogin></SocialLogin>
             </div>
         </div>
     );
