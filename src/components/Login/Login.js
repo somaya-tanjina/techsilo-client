@@ -11,7 +11,7 @@ const Login = () => {
         useSignInWithEmailAndPassword(auth);
     const navigate = useNavigate();
     const location = useLocation();
-    let from = location.state?.from?.pathname || "/";
+    const from = location.state?.from?.pathname || "/";
     const handleFormSubmit = (event) => {
         event.preventDefault();
 
@@ -24,7 +24,7 @@ const Login = () => {
     if (user) {
         navigate(from, { replace: true });
     }
-    
+
 
     console.log(user);
     return (
