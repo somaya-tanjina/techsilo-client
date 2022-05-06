@@ -6,10 +6,25 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import './ManageItems.css'
 import { Link } from "react-router-dom";
 const ManageItems = () => {
-    const [products] = useProducts([]);
-    const { name, img, quqntity } = products;
+    const [products, setProducts] = useProducts([]);
+
     console.log(products);
 
+
+    const handleDeleteItem = (id) => {
+        const confirmDelete = window.confirm(" Sure to delete clicked item?")
+        if (confirmDelete) {
+            fetch(`http://localhost:5000/inventory/${id}`, {
+                method: "DELETE",
+            })
+                .then(res => res.json())
+                .then(data => {
+                    const newProducts = products.filter(product => product._id !== id);
+                    setProducts(newProducts)
+                console.log(data);
+            })
+        }
+    }
 
     return (
         <div className="container">
@@ -57,7 +72,10 @@ const ManageItems = () => {
                                     </td>
                                     <td>{product.quantity}</td>
                                     <td>
-                                        <button className="btn btn-danger">
+                                        <button
+                                            onClick={() => handleDeleteItem(product._id)}
+                                            className="btn btn-danger"
+                                        >
                                             <FontAwesomeIcon icon={faTrash} />
                                             Delete
                                         </button>

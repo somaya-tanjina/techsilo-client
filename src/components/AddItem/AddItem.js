@@ -3,12 +3,12 @@ import React from "react";
 
 const AddItem = () => {
     const handleAddItem = (event) => {
-        
+
         event.preventDefault();
         const item = {
             name: event.target.name.value,
             supplierName: event.target.supplierName.value,
-            image: event.target.image.value,
+            img: event.target.img.value,
             price: event.target.price.value,
             quantity: event.target.quantity.value,
         };
@@ -44,8 +44,13 @@ const AddItem = () => {
                         required
                     />
 
-                    <input className="mb-3" type="text" id="name" name="image" required
-      />
+                    <input
+                        className="mb-3"
+                        type="text"
+                        id="name"
+                        name="img"
+                        required
+                    />
                     <input
                         className="mb-3"
                         type="number"
