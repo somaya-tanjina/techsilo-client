@@ -1,0 +1,21 @@
+h3{
+  color: #0C2E8A;
+}
+span{
+  color: #50D8AF;
+}
+.img-area{
+  width: 90%;
+  height: auto;
+}
+.image{
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 900px){
+.img-area{
+  width: 40%;
+  height: auto;
+}
+}

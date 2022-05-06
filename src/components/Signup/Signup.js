@@ -1,10 +1,15 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import auth from "../../firebase.init";
 const Signup = () => {
+    const navigate = useNavigate();
     const [createUserWithEmailAndPassword, user, loading, error] =
-        useCreateUserWithEmailAndPassword(auth);
+        useCreateUserWithEmailAndPassword(auth, {
+            sendEmailVerification: true,
+        });
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
@@ -13,7 +18,12 @@ const Signup = () => {
         const password = event.target.pass.value;
 
         createUserWithEmailAndPassword(email, password);
+        toast("Please verify your email")
     };
+
+    if (user) {
+        navigate("/home");
+    }
     console.log(user);
 
     return (
@@ -54,20 +64,14 @@ const Signup = () => {
                             <input
                                 className="w-100"
                                 type="submit"
-                                value="Log In"
+                                value="Sign Up"
                             />
                         </div>
                     </form>
-                    <div className=" mt-4">
-                        <p>
-                            <span>Forget Password?</span>
-                        </p>
-                        <p>
-                            Don't have an account? <span>Sign Up</span>
-                        </p>
-                    </div>
+                    
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

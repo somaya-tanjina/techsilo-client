@@ -6,9 +6,16 @@ import {
     faGoogle,
     faGithub,
 } from "@fortawesome/free-brands-svg-icons";
-import { useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {
+    useSignInWithFacebook,
+    useSignInWithGithub,
+    useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { useLocation, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const SocialLogin = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -16,15 +23,21 @@ const SocialLogin = () => {
     const from = location.state?.from?.pathname || "/";
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
-// GitHub Sign in
-const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
+    // GitHub Sign in
+    const [signInWithGithub, user1, loading1, error1] =
+        useSignInWithGithub(auth);
 
-// Facebook Sign in
+    // Facebook Sign in
     const [signInWithFacebook, user2, loading2, error2] =
         useSignInWithFacebook(auth);
 
     if (user || user1 || user2) {
         navigate(from, { replace: true });
+    }
+    if (error || error1 || error2) {
+        const displayError = <p className="text-danger">{error?.message}</p>;
+        toast(displayError);
+        
     }
 
     return (
@@ -53,6 +66,7 @@ const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
                 >
                     <FontAwesomeIcon icon={faGithub} />
                 </button>
+                <ToastContainer></ToastContainer>
             </div>
         </div>
     );

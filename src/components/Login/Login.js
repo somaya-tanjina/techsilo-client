@@ -1,6 +1,8 @@
 import React from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import auth from "../../firebase.init";
 import img from "../../images/login.png";
 import SocialLogin from "../SocialLogin/SocialLogin";
@@ -19,12 +21,17 @@ const Login = () => {
         const password = event.target.pass.value;
 
         signInWithEmailAndPassword(email, password);
+        event.target.reset();
     };
 
     if (user) {
         navigate(from, { replace: true });
     }
 
+    if (error) {
+        const displayError = <p className="text-danger">{error?.message}</p>;
+        toast(displayError);
+    }
 
     console.log(user);
     return (
@@ -39,12 +46,24 @@ const Login = () => {
                         <label>Password </label>
                         <input type="password" name="pass" required />
                     </div>
+
                     <div className="button-container">
                         <input type="submit" />
                     </div>
                 </form>
+                <div className=" mt-4">
+                    <p>
+                        <span>Forget Password?</span>
+                    </p>
+                    <p>
+                        Don't have an account? <span>Sign Up</span>
+                    </p>
+                </div>
+
                 <SocialLogin></SocialLogin>
             </div>
+
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
