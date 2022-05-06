@@ -4,6 +4,7 @@ import useProducts from "../Hooks/useProducts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import './ManageItems.css'
+import { Link } from "react-router-dom";
 const ManageItems = () => {
     const [products] = useProducts([]);
     const { name, img, quqntity } = products;
@@ -16,7 +17,9 @@ const ManageItems = () => {
                 <h3 className="mt-5 text-center">
                     Available <span>Product</span>
                 </h3>
-
+                <Link to={"/additem"}>
+                    <button className="add-btn">Add New Product</button>
+                </Link>
                 <div className="mt-5">
                     <Table size="sm" striped bordered hover>
                         <thead>
