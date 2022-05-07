@@ -10,6 +10,7 @@ const AddItem = () => {
             img: event.target.img.value,
             price: event.target.price.value,
             quantity: event.target.quantity.value,
+            email:event.target.email.value
         };
 
         axios.post("http://localhost:5000/additem", item).then((res) => {
@@ -55,6 +56,12 @@ const AddItem = () => {
                         name="quantity"
                         placeholder="quantity"
                         required
+                    />
+                    <input
+                        type="text"
+                        name="email"
+                        placeholder="Email"
+                        className="mb-3"
                     />
 
                     <textarea id="story" name="description"></textarea>

@@ -44,7 +44,7 @@ const InventoryDetails = () => {
 
 }
 
-    const handleincreaseQuantity = (id) => {
+    const handleincreaseQuantity = () => {
         const newQuantity =
             parseInt(quantity) + parseInt(emailRef.current.value);
 
@@ -55,6 +55,7 @@ const InventoryDetails = () => {
         setIsReload(!isReload);
 // send to server
 
+        console.log(id);
  fetch(`http://localhost:5000/inventory/${id}`, {
      method: "PUT",
      headers: {
@@ -66,7 +67,7 @@ const InventoryDetails = () => {
      .then((data) => {
          setIsReload(!isReload);
          console.log(data);
-         toast("Successfully updated");
+         toast("Successfully quantity increased");
      });
 
     }
