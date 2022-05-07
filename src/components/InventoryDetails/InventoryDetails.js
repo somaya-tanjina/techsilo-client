@@ -5,29 +5,27 @@ import "react-toastify/dist/ReactToastify.css";
 import useProductDetails from "../Hooks/useProductDetails";
 
 const InventoryDetails = () => {
-
     const { id } = useParams();
     const [product, setProduct] = useProductDetails(id);
     console.log(product);
-    const { img, _id, description, name, price, supplierName ,quantity} =
+    const { img, _id, description, name, price, supplierName, quantity } =
         product;
     console.log(_id);
-    const emailRef = useRef('');
-    const navigate = useNavigate()
+    const emailRef = useRef("");
+    const navigate = useNavigate();
 
-    const [isReload, setIsReload]= useState(false)
+    const [isReload, setIsReload] = useState(false);
 
     const handleNavigate = () => {
-    navigate("/manageitems");
-}
-
+        navigate("/manageitems");
+    };
 
     const handleDecreaseQuantity = (id) => {
         const newQuantity = quantity - 1;
-        const newProduct = { ...product, quantity: newQuantity }
-        setProduct(newProduct)
+        const newProduct = { ...product, quantity: newQuantity };
+        setProduct(newProduct);
 
-// send to server
+        // send to server
         fetch(`http://localhost:5000/inventory/${id}`, {
             method: "PUT",
             headers: {
@@ -37,40 +35,37 @@ const InventoryDetails = () => {
         })
             .then((response) => response.json())
             .then((data) => {
-                setIsReload(!isReload)
+                setIsReload(!isReload);
                 console.log(data);
-                toast("Successfully updated");
+                toast.dark("Successfully updated");
             });
-
-}
+    };
 
     const handleincreaseQuantity = () => {
         const newQuantity =
             parseInt(quantity) + parseInt(emailRef.current.value);
 
-
-        const newProduct = { ...product, quantity:newQuantity};
+        const newProduct = { ...product, quantity: newQuantity };
         setProduct(newProduct);
         console.log(newProduct);
         setIsReload(!isReload);
-// send to server
+        // send to server
 
         console.log(id);
- fetch(`http://localhost:5000/inventory/${id}`, {
-     method: "PUT",
-     headers: {
-         "Content-type": "application/json",
-     },
-     body: JSON.stringify(newProduct),
- })
-     .then((response) => response.json())
-     .then((data) => {
-         setIsReload(!isReload);
-         console.log(data);
-         toast("Successfully quantity increased");
-     });
-
-    }
+        fetch(`http://localhost:5000/inventory/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(newProduct),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                setIsReload(!isReload);
+                console.log(data);
+                toast.dark("Successfully quantity increased");
+            });
+    };
     return (
         <div className="container">
             <div className=" d-md-flex justify-content-evenly align-items-center border my-3 ">
@@ -86,10 +81,11 @@ const InventoryDetails = () => {
                     </h6>
                     <div>
                         <p> Price: $ {price}</p>
-                        <h6>Quantity: {quantity}</h6>
+
+                       {quantity===0? <button className="btn btn-danger mb-3">Sold</button> : <h6 className="mb-3">Quantity: {quantity}</h6>}
                     </div>
                     <div>
-                        <button onClick={()=>handleDecreaseQuantity(_id)}>
+                        <button onClick={() => handleDecreaseQuantity(_id)}>
                             Delivered
                         </button>
                         <button onClick={handleNavigate}>
@@ -108,7 +104,7 @@ const InventoryDetails = () => {
                             placeholder="quantity"
                             required
                         />
-                        <button onClick={()=>handleincreaseQuantity()}>
+                        <button onClick={() => handleincreaseQuantity()}>
                             Increase Qantity
                         </button>
                     </div>

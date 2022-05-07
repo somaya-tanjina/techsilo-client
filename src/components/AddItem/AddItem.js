@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import { toast } from "react-toastify";
 
 const AddItem = () => {
     const handleAddItem = (event) => {
@@ -16,6 +17,10 @@ const AddItem = () => {
         axios.post("http://localhost:5000/additem", item).then((res) => {
             const { data } = res;
             console.log(data);
+            if (data.insertedId) {
+                toast.dark("Successfully product added");
+                event.target.reset();
+            }
         });
     };
 

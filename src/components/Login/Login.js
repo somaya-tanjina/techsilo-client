@@ -30,7 +30,7 @@ const Login = () => {
 
     if (error) {
         const displayError = <p className="text-danger">{error?.message}</p>;
-        toast(displayError);
+        toast.dark(displayError);
     }
 
     console.log(user);
@@ -38,14 +38,11 @@ const Login = () => {
         <div className="container">
             <div className="form">
                 <form onSubmit={handleFormSubmit}>
+                    <label>Username </label>
+                    <input type="text" name="email" required />
 
-                        <label>Username </label>
-                        <input type="text" name="email" required />
-                    
-
-                        <label>Password </label>
-                        <input type="password" name="pass" required />
-
+                    <label>Password </label>
+                    <input type="password" name="pass" required />
 
                     <div className="button-container">
                         <input type="submit" />

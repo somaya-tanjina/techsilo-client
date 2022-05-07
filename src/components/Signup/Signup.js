@@ -18,7 +18,7 @@ const Signup = () => {
         const password = event.target.pass.value;
 
         createUserWithEmailAndPassword(email, password);
-        toast("Please verify your email")
+        toast.dark("Please verify your email");
     };
 
     if (user) {
@@ -68,7 +68,6 @@ const Signup = () => {
                             />
                         </div>
                     </form>
-                    
                 </div>
             </div>
             <ToastContainer></ToastContainer>

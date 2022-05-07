@@ -36,8 +36,7 @@ const SocialLogin = () => {
     }
     if (error || error1 || error2) {
         const displayError = <p className="text-danger">{error?.message}</p>;
-        toast(displayError);
-        
+        toast.dark(displayError);
     }
 
     return (
