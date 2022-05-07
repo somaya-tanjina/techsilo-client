@@ -14,7 +14,11 @@ const MyItems = () => {
     const findAddedProducts = async () => {
       const email = user.email;
         const url = `http://localhost:5000/products?email=${email}`;
-        const { data } = await axios.get(url);
+        const { data } = await axios.get(url, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+        });
         setAddedItem(data);
     };
 findAddedProducts()
@@ -60,11 +64,13 @@ findAddedProducts()
                       </tr>
                   </thead>
                   <tbody>
-                      {addedItem.map((item) =>(
+                      {addedItem.map((item) => (
                           <tr>
                               <td>
                                   <p title={item.name}>
-                                      {item.name.slice(0, 20)}...
+                                      {item.name.length > 20
+                                          ? item.name.slice(0, 20) + "..."
+                                          : item.name}
                                   </p>
                               </td>
                               <td>
