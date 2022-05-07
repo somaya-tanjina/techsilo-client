@@ -3,7 +3,6 @@ import React from "react";
 
 const AddItem = () => {
     const handleAddItem = (event) => {
-
         event.preventDefault();
         const item = {
             name: event.target.name.value,
@@ -13,13 +12,11 @@ const AddItem = () => {
             quantity: event.target.quantity.value,
         };
 
-        axios.post('http://localhost:5000/additem', item)
-            .then(res => {
-                const{data}=res
+        axios.post("http://localhost:5000/additem", item).then((res) => {
+            const { data } = res;
             console.log(data);
-        })
+        });
     };
-
 
     return (
         <div className="container">
@@ -44,13 +41,7 @@ const AddItem = () => {
                         required
                     />
 
-                    <input
-                        className="mb-3"
-                        type="text"
-                        id="name"
-                        name="img"
-                        required
-                    />
+                    <input className="mb-3" type="text" name="img" required />
                     <input
                         className="mb-3"
                         type="number"

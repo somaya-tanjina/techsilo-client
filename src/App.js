@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import AddItem from "./components/AddItem/AddItem";
 import Blogs from "./components/Blogs/Blogs";
 import Header from "./components/HomePage/Header/Header";
@@ -35,12 +36,27 @@ function App() {
                         </RequiredAth>
                     }
                 ></Route>
-                <Route path="/additem" element={<AddItem></AddItem>}></Route>
-                <Route path="/myitems" element={<MyItems></MyItems>}></Route>
+                <Route
+                    path="/additem"
+                    element={
+                        <RequiredAth>
+                            <AddItem></AddItem>
+                        </RequiredAth>
+                    }
+                ></Route>
+                <Route
+                    path="/myitems"
+                    element={
+                        <RequiredAth>
+                            <MyItems></MyItems>
+                        </RequiredAth>
+                    }
+                ></Route>
                 <Route path="/blogs" element={<Blogs></Blogs>}></Route>
                 <Route path="/signup" element={<Signup></Signup>}></Route>
                 <Route path="/login" element={<Login></Login>}></Route>
             </Routes>
+            <ToastContainer></ToastContainer>
         </div>
     );
 }
