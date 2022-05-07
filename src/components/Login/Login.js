@@ -1,10 +1,10 @@
+import axios from "axios";
 import React from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import auth from "../../firebase.init";
-import img from "../../images/login.png";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Login.css";
 
@@ -14,26 +14,33 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
-    const handleFormSubmit = (event) => {
+
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
 
         const email = event.target.email.value;
         const password = event.target.pass.value;
 
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
         event.target.reset();
+        const { data } = await axios.post("http://localhost:5000/login", {
+            email,
+        });
+        localStorage.setItem("accessToken", data.accessToken);
+        navigate(from, { replace: true });
+        console.log(data);
     };
 
-    if (user) {
-        navigate(from, { replace: true });
-    }
+    // if (user) {
+    //navigate(from, { replace: true });
+    // }
 
     if (error) {
         const displayError = <p className="text-danger">{error?.message}</p>;
         toast.dark(displayError);
     }
 
-    console.log(user);
+    //console.log(user);
     return (
         <div className="container">
             <div className="form">

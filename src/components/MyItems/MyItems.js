@@ -60,7 +60,7 @@ findAddedProducts()
                       </tr>
                   </thead>
                   <tbody>
-                      {addedItem.map((item) => (
+                      {addedItem.map((item) =>(
                           <tr>
                               <td>
                                   <p title={item.name}>

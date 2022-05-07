@@ -58,7 +58,11 @@ const ManageItems = () => {
                                 <tr>
                                     <td>
                                         <p title={product.name}>
-                                            {product.name.slice(0, 20)}...
+                                            {product.name.length>20
+                                                ? product.name.slice(0, 20) +
+                                                  "..."
+                                                : product.name}
+                                            
                                         </p>
                                     </td>
                                     <td>
@@ -73,7 +77,9 @@ const ManageItems = () => {
                                     <td>{product.quantity}</td>
                                     <td>
                                         <button
-                                            onClick={() => handleDeleteItem(product._id)}
+                                            onClick={() =>
+                                                handleDeleteItem(product._id)
+                                            }
                                             className="btn btn-danger"
                                         >
                                             <FontAwesomeIcon icon={faTrash} />
