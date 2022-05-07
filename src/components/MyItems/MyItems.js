@@ -18,10 +18,28 @@ const MyItems = () => {
         setAddedItem(data);
     };
 findAddedProducts()
-  },[user])
+  }, [user])
+
+
+  const handleDeleteItem = (id) => {
+      const confirmDelete = window.confirm(" Sure to delete clicked item?");
+      if (confirmDelete) {
+          fetch(`http://localhost:5000/inventory/${id}`, {
+              method: "DELETE",
+          })
+              .then((res) => res.json())
+              .then((data) => {
+                  const newAddedItem = addedItem.filter(
+                      (item) => item._id !== id
+                  );
+                  setAddedItem(newAddedItem);
+                  console.log(data);
+              });
+      }
+  };
 
   return (
-      <div className='container'>
+      <div className="container">
           <h1>My Added Items:{addedItem.length}</h1>
           <div className="mt-5">
               <Table size="sm" striped bordered hover>
@@ -42,26 +60,26 @@ findAddedProducts()
                       </tr>
                   </thead>
                   <tbody>
-                      {addedItem.map((product) => (
+                      {addedItem.map((item) => (
                           <tr>
                               <td>
-                                  <p title={product.name}>
-                                      {product.name.slice(0, 20)}...
+                                  <p title={item.name}>
+                                      {item.name.slice(0, 20)}...
                                   </p>
                               </td>
                               <td>
                                   <div className="img-area">
                                       <img
                                           className="image"
-                                          src={product.img}
+                                          src={item.img}
                                           alt=""
                                       />
                                   </div>
                               </td>
-                              <td>{product.quantity}</td>
+                              <td>{item.quantity}</td>
                               <td>
                                   <button
-
+                                      onClick={() => handleDeleteItem(item._id)}
                                       className="btn btn-danger"
                                   >
                                       <FontAwesomeIcon icon={faTrash} />
