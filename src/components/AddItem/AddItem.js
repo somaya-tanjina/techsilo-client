@@ -11,17 +11,19 @@ const AddItem = () => {
             img: event.target.img.value,
             price: event.target.price.value,
             quantity: event.target.quantity.value,
-            email:event.target.email.value
+            email: event.target.email.value,
         };
 
-        axios.post("http://localhost:5000/additem", item).then((res) => {
-            const { data } = res;
-            console.log(data);
-            if (data.insertedId) {
-                toast.dark("Successfully product added");
-                event.target.reset();
-            }
-        });
+        axios
+            .post("https://evening-citadel-22182.herokuapp.com/additem", item)
+            .then((res) => {
+                const { data } = res;
+                console.log(data);
+                if (data.insertedId) {
+                    toast.dark("Successfully product added");
+                    event.target.reset();
+                }
+            });
     };
 
     return (

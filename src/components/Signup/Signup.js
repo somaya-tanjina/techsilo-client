@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import auth from "../../firebase.init";
+
 const Signup = () => {
     const navigate = useNavigate();
     const [createUserWithEmailAndPassword, user, loading, error] =
@@ -18,13 +19,15 @@ const Signup = () => {
         const password = event.target.pass.value;
 
         createUserWithEmailAndPassword(email, password);
+
         toast.dark("Please verify your email");
     };
 
+    console.log(user
+    );
     if (user) {
-        navigate("/home");
-    }
-    console.log(user);
+    navigate("/home");
+}
 
     return (
         <div className="container">

@@ -1,12 +1,26 @@
-# Getting Started with Create React App
+# Tech Sillo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [https://laptop-warehouse-687a2.web.app/](https://laptop-warehouse-687a2.web.app/).
 
-## Available Scripts
+## Short Description
+tis website is technology based. Here you find Lapton of different brand
 
-In the project directory, you can run:
 
-### `npm start`
+
+### Features
+
+* Easy navigation
+* This is Mobile Friendly or Responsive Design;
+* One can get Live chat service
+* Know about Laptop of different brand
+* Easy navigation
+### FUnctionality
+
+* This applicatin is authenticated by React Firebase Hooksn
+* Use Aos for animation
+* Use Swiper js for slider
+* use react toasttify for confirmation
+* use react Bootstrap for design
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

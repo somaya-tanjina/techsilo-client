@@ -12,6 +12,9 @@ import ManageItems from "./components/ManageItems/ManageItems";
 import MyItems from "./components/MyItems/MyItems";
 import RequiredAth from "./components/RequiredAuth/RequiredAuth";
 import Signup from "./components/Signup/Signup";
+import NotFoundPage from "./components/NotFoundPage/NotFoundpage";
+import Contact from "./components/Contact/Contact";
+import LiveChat from "./components/LiveChat/LiveChat";
 
 function App() {
     return (
@@ -57,6 +60,9 @@ function App() {
                     <Route path="/blogs" element={<Blogs></Blogs>}></Route>
                     <Route path="/signup" element={<Signup></Signup>}></Route>
                     <Route path="/login" element={<Login></Login>}></Route>
+                    <Route path="*" element={<NotFoundPage></NotFoundPage>} ></Route>
+                    <Route path="contact" element={<Contact></Contact>}></Route>
+                    <Route path="/livechat" element={<LiveChat></LiveChat>}></Route>
                 </Routes>
             </div>
             <Footer></Footer>

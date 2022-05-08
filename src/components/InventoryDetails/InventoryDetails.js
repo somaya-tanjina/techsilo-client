@@ -26,7 +26,7 @@ const InventoryDetails = () => {
         setProduct(newProduct);
 
         // send to server
-        fetch(`http://localhost:5000/inventory/${id}`, {
+        fetch(`https://evening-citadel-22182.herokuapp.com/inventory/${id}`, {
             method: "PUT",
             headers: {
                 "Content-type": "application/json",
@@ -52,7 +52,7 @@ const InventoryDetails = () => {
         // send to server
 
         console.log(id);
-        fetch(`http://localhost:5000/inventory/${id}`, {
+        fetch(`https://evening-citadel-22182.herokuapp.com/inventory/${id}`, {
             method: "PUT",
             headers: {
                 "Content-type": "application/json",
@@ -82,10 +82,19 @@ const InventoryDetails = () => {
                     <div>
                         <p> Price: $ {price}</p>
 
-                       {quantity===0? <button className="btn btn-danger mb-3">Sold</button> : <h6 className="mb-3">Quantity: {quantity}</h6>}
+                        {quantity === 0 ? (
+                            <button className="btn btn-danger mb-3">
+                                Sold
+                            </button>
+                        ) : (
+                            <h6 className="mb-3">Quantity: {quantity}</h6>
+                        )}
                     </div>
                     <div className="mx-auto">
-                        <button className="me-3 mb-3" onClick={() => handleDecreaseQuantity(_id)}>
+                        <button
+                            className="me-3 mb-3"
+                            onClick={() => handleDecreaseQuantity(_id)}
+                        >
                             Delivered
                         </button>
                         <button onClick={handleNavigate}>

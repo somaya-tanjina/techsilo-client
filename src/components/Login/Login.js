@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import auth from "../../firebase.init";
+import Loading from "../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Login.css";
 
@@ -23,14 +24,20 @@ const Login = () => {
 
         await signInWithEmailAndPassword(email, password);
         event.target.reset();
-        const { data } = await axios.post("http://localhost:5000/login", {
-            email,
-        });
+        const { data } = await axios.post(
+            "https://evening-citadel-22182.herokuapp.com/login",
+            {
+                email,
+            }
+        );
         localStorage.setItem("accessToken", data.accessToken);
         navigate(from, { replace: true });
         console.log(data);
     };
 
+    if (loading) {
+        return <Loading></Loading>;
+    }
     // if (user) {
     //navigate(from, { replace: true });
     // }
@@ -57,6 +64,7 @@ const Login = () => {
 
                         <button className="mt-4 d-block mx-auto">Submit</button>
                     </form>
+
                     <div className=" mt-4">
                         <p>
                             <span>Forget Password?</span>

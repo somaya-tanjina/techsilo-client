@@ -97,7 +97,7 @@ const Header = () => {
                             <Nav.Link
                                 as={CustomLink}
                                 to="/livechat"
-                                className="  me-1 link"
+                                className=" btn btn-dark text-white  mx-1 link"
                             >
                                 Live Chat
                             </Nav.Link>

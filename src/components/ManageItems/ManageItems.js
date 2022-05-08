@@ -3,28 +3,32 @@ import { Table } from "react-bootstrap";
 import useProducts from "../Hooks/useProducts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import './ManageItems.css'
+import "./ManageItems.css";
 import { Link } from "react-router-dom";
 const ManageItems = () => {
     const [products, setProducts] = useProducts([]);
 
     console.log(products);
 
-
     const handleDeleteItem = (id) => {
-        const confirmDelete = window.confirm(" Sure to delete clicked item?")
+        const confirmDelete = window.confirm(" Sure to delete clicked item?");
         if (confirmDelete) {
-            fetch(`http://localhost:5000/inventory/${id}`, {
-                method: "DELETE",
-            })
-                .then(res => res.json())
-                .then(data => {
-                    const newProducts = products.filter(product => product._id !== id);
-                    setProducts(newProducts)
-                console.log(data);
-            })
+            fetch(
+                `https://evening-citadel-22182.herokuapp.com/inventory/${id}`,
+                {
+                    method: "DELETE",
+                }
+            )
+                .then((res) => res.json())
+                .then((data) => {
+                    const newProducts = products.filter(
+                        (product) => product._id !== id
+                    );
+                    setProducts(newProducts);
+                    console.log(data);
+                });
         }
-    }
+    };
 
     return (
         <div className="container">
