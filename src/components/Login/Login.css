@@ -1,47 +1,4 @@
-/* input[type="text"],
-input[type="password"] {
-  height: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
-.input-container {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin: 10px;
-}
-input[type="submit"] {
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 15px;
-  background: #01d28e;
-  border: 1px solid #01d28e;
-  color: #fff;
-  padding: 10px 20px;
-}
 
-input[type="submit"]:hover {
-  background: #6cf0c2;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-}
-
-.form {
-  background-color: white;
-  padding: 2rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 50px 5%;
-    width: 100%;
-    font-family: "Roboto", sans-serif;
-}
- */
-
-
-
-
-/* now */
 input[type="text"],
 input[type="number"],
 input[type="image"],
@@ -49,6 +6,7 @@ textarea,
 input[type="password"] {
     height: 35px;
     padding: 0 12%;
+    width: 100%;
     outline: none;
     border: none;
     display: block;
@@ -70,8 +28,8 @@ input[type="submit"] {
     margin-top: 10px;
     cursor: pointer;
     font-size: 15px;
-    background: #01d28e;
-    border: 1px solid #01d28e;
+    background: #029E7F;
+    border: 1px solid rgb(2, 158, 127);
     border-radius: 5px;
     color: #fff;
     font-size: 1.1rem;

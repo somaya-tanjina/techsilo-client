@@ -51,9 +51,7 @@ const Login = () => {
                     <label>Password </label>
                     <input type="password" name="pass" required />
 
-                    <div className="button-container">
-                        <input type="submit" />
-                    </div>
+                    <button>Submit</button>
                 </form>
                 <div className=" mt-4">
                     <p>

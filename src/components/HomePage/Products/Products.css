@@ -1,0 +1,11 @@
+.service-header{
+  color: #0C2E8A;
+  font-weight: 900;
+  font-size: 3rem;
+
+}
+.service-border{
+  background: #029E7F;
+  height: 8px;
+  width: 200px;
+}

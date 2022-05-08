@@ -84,8 +84,8 @@ const InventoryDetails = () => {
 
                        {quantity===0? <button className="btn btn-danger mb-3">Sold</button> : <h6 className="mb-3">Quantity: {quantity}</h6>}
                     </div>
-                    <div>
-                        <button onClick={() => handleDecreaseQuantity(_id)}>
+                    <div className="mx-auto">
+                        <button className="me-3 mb-3" onClick={() => handleDecreaseQuantity(_id)}>
                             Delivered
                         </button>
                         <button onClick={handleNavigate}>

@@ -2,10 +2,9 @@ import { signOut } from "firebase/auth";
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 import CustomLink from "../CustomLink/CustomLink";
-import "./Header.css";
+import './Header.css';
 
 const Header = () => {
     const [user] = useAuthState(auth);
@@ -16,33 +15,41 @@ const Header = () => {
         <div>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
                 <Container>
-                    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                    <Navbar.Brand href="#home">
+                        <h2 className="fw-bold">
+                            Tech-<span>Silo</span>
+                        </h2>
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link as={Link} to="/" className="link me-4">
+                            <Nav.Link
+                                as={CustomLink}
+                                to="/"
+                                className=" me-1 link"
+                            >
                                 Home
                             </Nav.Link>
                             {user && (
                                 <>
                                     <Nav.Link
-                                        as={Link}
+                                        as={CustomLink}
                                         to="/manageitems"
-                                        className="link me-4"
+                                        className=" me-1 link"
                                     >
                                         Manage Items
                                     </Nav.Link>
                                     <Nav.Link
-                                        as={Link}
+                                        as={CustomLink}
                                         to="/additem"
-                                        className="link me-4"
+                                        className=" me-1 link"
                                     >
                                         Add Item
                                     </Nav.Link>
                                     <Nav.Link
-                                        as={Link}
+                                        as={CustomLink}
                                         to="/myitems"
-                                        className="link me-4"
+                                        className=" me-1 link"
                                     >
                                         My Items
                                     </Nav.Link>
@@ -50,46 +57,50 @@ const Header = () => {
                             )}
 
                             <Nav.Link
-                                as={Link}
+                                as={CustomLink}
                                 to="/signup"
-                                className="link me-4"
+                                className=" me-1 link"
                             >
                                 Sign Up
                             </Nav.Link>
                             <Nav.Link
-                                as={Link}
+                                as={CustomLink}
                                 to="/contact"
-                                className="link me-4"
+                                className=" me-1 link"
                             >
                                 Contact
                             </Nav.Link>
                             <Nav.Link
                                 as={CustomLink}
                                 to="/blogs"
-                                className="link me-4"
+                                className=" me-1 link"
                             >
                                 Blogs
                             </Nav.Link>
-                            <Nav.Link
-                                as={CustomLink}
-                                to="/livechat"
-                                className="link me-4"
-                            >
-                                Live Chat
-                            </Nav.Link>
+
                             {user ? (
-                                <button onClick={handleSignOut}>
+                                <button
+                                    className="btn btn-dark "
+                                    onClick={handleSignOut}
+                                >
                                     Sign Out
                                 </button>
                             ) : (
                                 <Nav.Link
-                                    as={Link}
+                                    as={CustomLink}
                                     to="/login"
-                                    className="link me-4"
+                                    className=" me-1 link"
                                 >
                                     Log In
                                 </Nav.Link>
                             )}
+                            <Nav.Link
+                                as={CustomLink}
+                                to="/livechat"
+                                className="  me-1 link"
+                            >
+                                Live Chat
+                            </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

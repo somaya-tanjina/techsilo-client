@@ -1,0 +1,21 @@
+
+.hero-paragraph{
+  color: #70757C;
+}
+.hero-heading{
+  color: #0C2E8A;
+  font-weight:900;
+  font-size: 3.3rem;
+}
+.hero-span{
+  font-weight:900;
+  font-size: 3.3rem;
+}
+
+
+
+@media screen and (min-width: 1000px){
+.img_area{
+  width:50%;
+}
+}

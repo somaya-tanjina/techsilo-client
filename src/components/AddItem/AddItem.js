@@ -26,58 +26,65 @@ const AddItem = () => {
 
     return (
         <div className="container">
-            <div className="d-md-flex  justify-content-md-center align-items-center h-100 border">
-                <form onSubmit={handleAddItem}>
-                    <h1 className="text-center mb-4 text-dark">
-                        Add New Product
-                    </h1>
+            <div className="d-md-flex form justify-content-md-center align-items-center h-100 border ">
+                <form  onSubmit={handleAddItem}>
 
-                    <input
-                        className="   mb-3"
-                        type="text"
-                        name="name"
-                        placeholder="Name"
-                        required
-                    />
-                    <input
-                        className="   mb-3"
-                        type="text"
-                        name="supplierName"
-                        placeholder="supplierName"
-                        required
-                    />
+                        <h3 className="text-center mb-4 ">
+                            Add New <span>Product</span>
+                        </h3>
 
-                    <input className="mb-3" type="text" name="img" required />
-                    <input
-                        className="mb-3"
-                        type="number"
-                        name="price"
-                        placeholder="price"
-                        required
-                    />
-                    <input
-                        className=" mb-3"
-                        type="number"
-                        name="quantity"
-                        placeholder="quantity"
-                        required
-                    />
-                    <input
-                        type="text"
-                        name="email"
-                        placeholder="Email"
-                        className="mb-3"
-                    />
-
-                    <textarea id="story" name="description"></textarea>
-
-                    <div className="button-container">
                         <input
-                            className="  "
-                            type="submit"
-                            value="Add Product"
+                            className="   mb-3"
+                            type="text"
+                            name="name"
+                            placeholder="Name"
+                            required
                         />
-                    </div>
+                        <input
+                            className="   mb-3"
+                            type="text"
+                            name="supplierName"
+                            placeholder="supplierName"
+                            required
+                        />
+
+                        <input
+                            className="mb-3"
+                            type="text"
+                            name="img"
+                            required
+                        />
+                        <input
+                            className="mb-3"
+                            type="number"
+                            name="price"
+                            placeholder="price"
+                            required
+                        />
+                        <input
+                            className=" mb-3"
+                            type="number"
+                            name="quantity"
+                            placeholder="quantity"
+                            required
+                        />
+                        <input
+                            type="text"
+                            name="email"
+                            placeholder="Email"
+                            className="mb-3"
+                        />
+
+                        <textarea
+                            className="w-100"
+                            id="story"
+                            name="description"
+                        ></textarea>
+
+                        <div className="button-container">
+                            <button className="mt-4">Add Item</button>
+                        </div>
+
                 </form>
             </div>
         </div>
