@@ -12,7 +12,7 @@ const Products = () => {
     }
 
   return (
-      <div className="products_area ">
+      <div className="products_area my-5 ">
           <div
               data-aos="fade-up"
               data-aos-easing="linear"
@@ -22,14 +22,14 @@ const Products = () => {
               <h1 className="text-center service-header">Services</h1>
               <div className="service-border mx-auto"></div>
 
-              <div className="row">
+              <div className="row my-5">
                   {products.slice(0, 6).map((product) => (
                       <Product key={product._id} product={product}></Product>
                   ))}
               </div>
               <button
                   onClick={handleNavigate}
-                  className="btn btn-outline-success d-block mx-auto my-4"
+                  className="  d-block mx-auto my-5"
               >
                   Manage Inventories
               </button>
