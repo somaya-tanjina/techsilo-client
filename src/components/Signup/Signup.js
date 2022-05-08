@@ -28,14 +28,12 @@ const Signup = () => {
 
     return (
         <div className="container">
-            <div className="d-md-flex  justify-content-md-center align-items-center h-100 border  ">
-                <div className="login-img">
-                    {/* <img className="login-img" src={img} alt="" /> */}
-                </div>
-
+            <div className="d-flex mt-5 d-block mx-auto justify-content-center align-items-center h-100   ">
                 <div className="form py-5  ">
                     <form onSubmit={handleFormSubmit}>
-                        <h1 className="text-center mb-4 text-dark">Sign Up</h1>
+                        <h3 className="text-center mb-4 fw-bold fs-1">
+                            Sign Up
+                        </h3>
 
                         <input
                             className="w-100 mb-3"

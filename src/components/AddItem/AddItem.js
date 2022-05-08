@@ -26,10 +26,10 @@ const AddItem = () => {
 
     return (
         <div className="container">
-            <div className="d-md-flex form justify-content-md-center align-items-center h-100 border ">
-                <form  onSubmit={handleAddItem}>
-
-                        <h3 className="text-center mb-4 ">
+            <div className="d-flex mt-4 justify-content-center align-items-center h-100  ">
+                <div className="form py-5">
+                    <form onSubmit={handleAddItem}>
+                        <h3 className="text-center mb-4 fw-bold fs-1 ">
                             Add New <span>Product</span>
                         </h3>
 
@@ -84,8 +84,8 @@ const AddItem = () => {
                         <div className="button-container">
                             <button className="mt-4">Add Item</button>
                         </div>
-
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     );

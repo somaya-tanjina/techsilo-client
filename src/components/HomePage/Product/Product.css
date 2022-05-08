@@ -2,6 +2,10 @@
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
+.card:hover{
+background: #262626;
+color: aliceblue;
+}
 .img-area{
   width: 50%;
   margin: 0 auto;

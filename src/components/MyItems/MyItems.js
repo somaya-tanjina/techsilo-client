@@ -44,7 +44,9 @@ findAddedProducts()
 
   return (
       <div className="container">
-          <h1>My Added Items:{addedItem.length}</h1>
+          <h3 className="fw-bold text-center mt-4 fs-1">
+              My Added <span>Items</span>
+          </h3>
           <div className="mt-5">
               <Table size="sm" striped bordered hover>
                   <thead>

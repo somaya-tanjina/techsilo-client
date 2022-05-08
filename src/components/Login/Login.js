@@ -43,29 +43,39 @@ const Login = () => {
     //console.log(user);
     return (
         <div className="container">
-            <div className="form">
-                <form onSubmit={handleFormSubmit}>
-                    <label>Username </label>
-                    <input type="text" name="email" required />
+            <div className="d-flex mt-5 d-block mx-auto justify-content-center align-items-center h-100   ">
+                <div className="form py-4">
+                    <form onSubmit={handleFormSubmit}>
+                        <h3 className="text-center mb-4 fw-bolder fs-1">
+                            Please <span>Log In</span>
+                        </h3>
+                        <label>Username </label>
+                        <input type="text" name="email" required />
 
-                    <label>Password </label>
-                    <input type="password" name="pass" required />
+                        <label>Password </label>
+                        <input type="password" name="pass" required />
 
-                    <button>Submit</button>
-                </form>
-                <div className=" mt-4">
-                    <p>
-                        <span>Forget Password?</span>
-                    </p>
-                    <p>
-                        Don't have an account? <span>Sign Up</span>
-                    </p>
+                        <button className="mt-4 d-block mx-auto">Submit</button>
+                    </form>
+                    <div className=" mt-4">
+                        <p>
+                            <span>Forget Password?</span>
+                        </p>
+                        <p>
+                            Don't have an account?{" "}
+                            <span onClick={() => navigate("/signup")}>
+                                Sign Up
+                            </span>
+                        </p>
+                    </div>
+
+                    <div className="text-center">
+                        <SocialLogin></SocialLogin>
+                    </div>
                 </div>
 
-                <SocialLogin></SocialLogin>
+                <ToastContainer></ToastContainer>
             </div>
-
-            <ToastContainer></ToastContainer>
         </div>
     );
 };

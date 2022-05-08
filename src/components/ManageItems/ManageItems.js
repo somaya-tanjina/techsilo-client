@@ -29,7 +29,7 @@ const ManageItems = () => {
     return (
         <div className="container">
             <div>
-                <h3 className="mt-5 text-center">
+                <h3 className="mt-5 text-center fw-bold fs-1">
                     Available <span>Product</span>
                 </h3>
                 <Link to={"/additem"}>
@@ -58,11 +58,10 @@ const ManageItems = () => {
                                 <tr>
                                     <td>
                                         <p title={product.name}>
-                                            {product.name.length>20
+                                            {product.name.length > 20
                                                 ? product.name.slice(0, 20) +
                                                   "..."
                                                 : product.name}
-                                            
                                         </p>
                                     </td>
                                     <td>

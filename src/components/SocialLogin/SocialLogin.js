@@ -49,19 +49,19 @@ const SocialLogin = () => {
             <div>
                 <button
                     onClick={() => signInWithGoogle()}
-                    className="btn-google    btn btn-success  rounded-circle  mb-2"
+                    className="btn-google    btn btn-outline-success  rounded-circle me-2  mb-2"
                 >
                     <FontAwesomeIcon icon={faGoogle} />
                 </button>
                 <button
                     onClick={() => signInWithFacebook()}
-                    className=" btn btn-outline-primary rounded-circle   mb-2"
+                    className=" btn btn-primary rounded-circle me-2  mb-2"
                 >
                     <FontAwesomeIcon icon={faFacebookF} />
                 </button>
                 <button
                     onClick={() => signInWithGithub()}
-                    className="btn btn-outline-dark btn-floating rounded-circle "
+                    className="btn btn-dark btn-floating rounded-circle mb-2 "
                 >
                     <FontAwesomeIcon icon={faGithub} />
                 </button>
